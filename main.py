@@ -1,42 +1,17 @@
 import random
 
 
-def main():
-    print("The game is started")
+class Game:
+    def play(self):
+        number = random.randint(1, 10)
 
-    num = random.randint(1,99)
-    score = 10
-    while True:     
-        users_number = input("Guess the number: ")
-        if users_number == 'exit':
-            
-            break
-        elif users_number== 'is the number even':
-            if num % 2 ==0 :
-                print('The number is even')
-            else:
-                print("the number is odd ")
-        elif num == users_number:
-            print("You won")
-            print(f'Your score {score}')
-        else: 
-            print("You lose")
-        score -= 1
-        
+        guess = int(input("Guess number: "))
 
-    
-
-    # TODO: Features 
-    # use loop
-    # take input for finishing the game
-    # take input for hint question 
-    # add scoring mechanism 
-
-    # TODO: Refactor
-    # extract classes
-    # use separate files
+        if guess == number:
+            print("Correct!")
+        else:
+            print("Wrong!")
 
 
-
-if __name__ == "__main__":
-    main()
+game = Game()
+game.play()
