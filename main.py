@@ -1,16 +1,16 @@
-import random
+from number import Number
+from result import Result
 
 
 class Game:
     def play(self):
-        number = random.randint(1, 10)
+        number = Number().generate()
 
         guess = int(input("Guess number: "))
 
-        if guess == number:
-            print("Correct!")
-        else:
-            print("Wrong!")
+        result = Result()
+
+        print(result.check(guess, number))
 
 
 game = Game()
